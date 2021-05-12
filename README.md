@@ -26,8 +26,6 @@ docker exec -it mongodb mongoimport --db=InfoSys --collection=Students --file=st
 sudo docker cp users.json mongodb:/users.json #to copy data from host to container
 docker exec -it mongodb mongoimport --db=InfoSys --collection=Users --file=users.json #to add the file to Users collection
 ```
-*note: We have to be located in the same directory where students.json and users.json is located in order to use the files
-
 When we are ready to run the project, we use the command python3 followed by the file name, as seen below
 
 ```bash
