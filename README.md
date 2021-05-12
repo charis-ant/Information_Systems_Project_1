@@ -19,7 +19,7 @@ Then we are going to use the Mongo Shell to create the InfoSys database, which w
 sudo docker exec -it mongodb mongo
 ```
 In Mongo Shell we type:
-```
+```bash
 use InfoSys #to create InfoSys db
 sudo docker cp students.json mongodb:/students.json #to copy data from host to container
 docker exec -it mongodb mongoimport --db=InfoSys --collection=Students --file=students.json #to add the file to Students collection
