@@ -112,4 +112,13 @@ In cases the student has't passed any of their courses or no student was found, 
 But if the student has passed at least one of the declared courses then their name will show up, followed by the name of the passed course as well as its grade. An example is shown in the image bellow
 ![get passed courses](get_passed_courses.png)
 
-*Every time a change has been made to the app.py file, to execute a third, forth, fifth, sixth, seventh, eighth or nineth query we need to execute the login query first in order to get the new session uuid*
+*Every time a change has been made to the app.py file, to execute the third, forth, fifth, sixth, seventh, eighth or nineth query we need to execute the login query first in order to get the new session uuid*
+
+##### References:
+https://stackoverflow.com/questions/28467967/unhashable-type-dict-keys-works-in-ver-2-7-5-but-not-in-3-4
+https://pythonexamples.org/python-list-of-dictionaries/
+https://stackoverflow.com/questions/17117912/python-accessing-values-in-a-list-of-dictionaries/43496398
+https://stackoverflow.com/questions/51677489/dictionary-containing-a-list-of-dictionaries
+https://stackoverflow.com/questions/53017026/how-can-i-access-list-values-in-a-dictionary
+https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github
+https://www.makeareadme.com/
