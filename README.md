@@ -111,3 +111,5 @@ curl -X GET localhost:5000/getPassedCourses -d '{"email":"insert email here"}' -
 In cases the student has't passed any of their courses or no student was found, a correspong response will show up.
 But if the student has passed at least one of the declared courses then their name will show up, followed by the name of the passed course as well as its grade. An example is shown in the image bellow
 ![get passed courses](get_passed_courses.png)
+
+*Every time a change has been made to the app.py file, to execute a third, forth, fifth, sixth, seventh, eighth or nineth query we need to execute the login query first in order to get the new session uuid*
