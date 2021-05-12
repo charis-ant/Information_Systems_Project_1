@@ -33,6 +33,7 @@ python3 app.py
 *note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file is located.*
 
 ## Execution
+### Create User (POST)
 In order to execute all the endpoints, we have to create a user to add to the Users collection, who has the login info given by the user in a new terminal window by typing the command:
 ```bash
 curl -X POST localhost:5000/createUser -d '{"username":"insert username here", "password":"insert password here"}' -H Content-Type:application/json
@@ -41,6 +42,7 @@ The result if there is no other entry in the collection with the given username,
 ![create user function](create_user.png)
 In case the given username already exist, the output will be a corresponding response.
 
+### Login (POST)
 Now, the user needs to be logged in. This will happen by typing to the new terminal
 ```bash
 curl -X POST localhost:5000/login -d '{"username":"insert username here", "password":"insert password here"}' -H Content-Type:application/json
@@ -48,6 +50,7 @@ curl -X POST localhost:5000/login -d '{"username":"insert username here", "passw
 If the login information are correct then a success message followed by the user's session uuid and username will show up
 ![login function](login.png)
 
+### Get student (GET)
 If we want to print the information of a student with a specific email, then in the terminal window we type:
 ```bash
 curl -X GET localhost:5000/getStudent -d '{"email":"insert email here"}' -H "authorization: the user's uuid printed in the terminal after the successful execution of the login query" -H Content-Type:application/json
@@ -55,10 +58,15 @@ curl -X GET localhost:5000/getStudent -d '{"email":"insert email here"}' -H "aut
 The result should look like the image bellow
 ![get student funtion](get_student.png)
 
-
-![get students thirties function](get_students_oldy.png)
-![get students oldies function](get_students_thirty.png)
+### Get students thirties (GET)
+![get students thirties function](get_students_thirty.png)
+### Get students oldies (GET)
+![get students oldies function](get_students_oldy.png)
+### Get student address (GET)
 ![get student address](get_student_address.png)
+### Delete student (DELETE)
 ![delete student](delete_student.png)
+### Add courses (PATCH)
 ![add courses](add_courses.png)
+### Get passed courses (GET)
 ![get passed courses](get_passed_courses.png)
