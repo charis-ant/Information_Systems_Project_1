@@ -32,15 +32,30 @@ python3 app.py
 ```
 *note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file is located.*
 
-## app.py
-In order to execute all the endpoints, we have to create a user to add to the Users collection, who has the login info given by the user in the terminal window by typing the command:
+## Execution
+In order to execute all the endpoints, we have to create a user to add to the Users collection, who has the login info given by the user in a new terminal window by typing the command:
 ```bash
 curl -X POST localhost:5000/createUser -d '{"username":"insert username here", "password":"insert password here"}' -H Content-Type:application/json
 ```
 The result if there is no other entry in the collection with the given username, will be a success response as seen in the image bellow
 ![create user function](create_user.png)
+In case the given username already exist, the output will be a corresponding response.
+
+Now, the user needs to be logged in. This will happen by typing to the new terminal
+```bash
+curl -X POST localhost:5000/login -d '{"username":"insert username here", "password":"insert password here"}' -H Content-Type:application/json
+```
+If the login information are correct then a success message followed by the user's session uuid and username will show up
 ![login function](login.png)
+
+If we want to print the information of a student with a specific email, then in the terminal window we type:
+```bash
+curl -X GET localhost:5000/getStudent -d '{"email":"insert email here"}' -H "authorization: the user's uuid printed in the terminal after the successful execution of the login query" -H Content-Type:application/json
+```
+The result should look like the image bellow
 ![get student funtion](get_student.png)
+
+
 ![get students thirties function](get_students_oldy.png)
 ![get students oldies function](get_students_thirty.png)
 ![get student address](get_student_address.png)
