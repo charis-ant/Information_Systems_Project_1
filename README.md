@@ -122,3 +122,4 @@ https://stackoverflow.com/questions/51677489/dictionary-containing-a-list-of-dic
 https://stackoverflow.com/questions/53017026/how-can-i-access-list-values-in-a-dictionary
 https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github
 https://www.makeareadme.com/
+https://guides.github.com/features/mastering-markdown/
