@@ -40,5 +40,5 @@ python3 app.py
 ![get students oldies function](get_students_thirty.png)
 ![get student address](get_student_address.png)
 ![delete student](delete_student.png)
-![update student](update_student.png)
+![add courses](add_courses.png)
 ![get passed courses](get_passed_courses.png)
