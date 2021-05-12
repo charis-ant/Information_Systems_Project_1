@@ -1,6 +1,5 @@
 # Ergasia_1_e18011_Antoniadi_Charis
-Repository for assignment 1 of Information Systems course, containing an app.py file and a README file with a detailed description of the project.
-
+This project is about executing queries for a Mongodb database using the pymongo module of python. The app.py file contains nine endpoints, each used for POST, GET, PATCH and DELETE HTTP methods.
 
 ## Preparation
 Firstly we need to open a terminal window to start docker
@@ -33,6 +32,12 @@ python3 app.py
 ```
 *note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file is located.*
 
+##app.py
+In order to execute all the endpoints, we have to create a user to add to the Users collection, who has the login info given by the user in the terminal window by typing the command:
+```bash
+curl -X POST localhost:5000/createUser -d '{"username":"insert username here", "password":"insert password here"}' -H Content-Type:application/json
+```
+The result if there is no other entry in the collection with the given username, will be a success response as seen in the image bellow
 ![create user function](create_user.png)
 ![login function](login.png)
 ![get student funtion](get_student.png)
