@@ -31,4 +31,4 @@ When we are ready to run the project, we use the command python3 followed by the
 ```bash
 python3 app.py
 ```
-*note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file.*
+*note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file is located.*
