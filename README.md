@@ -33,4 +33,12 @@ python3 app.py
 ```
 *note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file is located.*
 
-![image](create_user.png)
+![create user function](create_user.png)
+![login function](login.png)
+![get student funtion](get_student.png)
+![get students thirties function](get_students_oldy.png)
+![get students oldies function](get_students_thirty.png)
+![get student address](get_student_address.png)
+![delete student](delete_student.png)
+![update student](update_student.png)
+![get passed courses](get_passed_courses.png)
