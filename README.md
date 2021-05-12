@@ -43,7 +43,7 @@ The result if there is no other entry in the collection with the given username,
 In case the given username already exist, the output will be a corresponding response.
 
 ### Login (POST)
-Now, the user needs to be logged in. This will happen by typing to the new terminal
+Now, the user needs to be logged in. This will happen by typing the command:
 ```bash
 curl -X POST localhost:5000/login -d '{"username":"insert username here", "password":"insert password here"}' -H Content-Type:application/json
 ```
@@ -53,20 +53,46 @@ If the login information are correct then a success message followed by the user
 ### Get student (GET)
 If we want to print the information of a student with a specific email, then in the terminal window we type:
 ```bash
-curl -X GET localhost:5000/getStudent -d '{"email":"insert email here"}' -H "authorization: the user's uuid printed in the terminal after the successful execution of the login query" -H Content-Type:application/json
+curl -X GET localhost:5000/getStudent -d '{"email":"insert email here"}' -H "authorization: the user's uuid (printed in the terminal after the successful execution of the login query)" -H Content-Type:application/json
 ```
 The result should look like the image bellow
 ![get student funtion](get_student.png)
 
 ### Get students thirties (GET)
+If we want to print the information of enery user born in the year 1991, we type the command:
+```bash
+curl -X GET localhost:5000/getStudents/thirties -H "authorization: the user's uuid (printed in the terminal after the successful execution of the login query)" -H Content-Type:application/json
+```
 ![get students thirties function](get_students_thirty.png)
+
 ### Get students oldies (GET)
+```bash
+curl -X GET localhost:5000/getStudents/oldies -H "authorization: the user's uuid (printed in the terminal after the successful execution of the login query)" -H Content-Type:application/json
+
+```
 ![get students oldies function](get_students_oldy.png)
+
 ### Get student address (GET)
+```bash
+curl -X GET localhost:5000/getStudentAddress -d '{"email":"insert email here"}' -H "authorization: the user's uuid (printed in the terminal after the successful execution of the login query)" -H Content-Type:application/json
+```
 ![get student address](get_student_address.png)
+
 ### Delete student (DELETE)
+```bash
+curl -X DELETE localhost:5000/deleteStudent -d '{"email":"insert email here"}' -H "authorization: authorization: the user's uuid (printed in the terminal after the successful execution of the login query)" -H Content-Type:application/json
+```
 ![delete student](delete_student.png)
+
 ### Add courses (PATCH)
+```bash
+curl -X PATCH localhost:5000/addCourses -d '{"email":"insert email here", "courses":[{"insert course's name":insert course's grade}, {"insert course's name":insert course's grade}, {"insert course's name":insert course's grade}]}' -H "authorization: the user's uuid (printed in the terminal after the successful execution of the login query)" -H Content-Type:application/json
+```
 ![add courses](add_courses.png)
+
 ### Get passed courses (GET)
+```bash
+curl -X GET localhost:5000/getPassedCourses -d '{"email":"insert email here"}' -H "authorization: the user's uuid (printed in the terminal after the successful execution of the login query)"
+-H Content-Type:application/json
+```
 ![get passed courses](get_passed_courses.png)
