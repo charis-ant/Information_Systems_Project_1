@@ -33,4 +33,4 @@ python3 app.py
 ```
 *note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file is located.*
 
-![image](charis-ant.github.com/Ergasia_1_e18011_Antoniadi_Charis/create_user.png?raw=true)
+![image](https://github.com/[charis-ant]/[Ergasia_1_e18011_Antoniadi_Charis]/create_user.png?raw=true)
