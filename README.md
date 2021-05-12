@@ -32,3 +32,5 @@ When we are ready to run the project, we use the command python3 followed by the
 python3 app.py
 ```
 *note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file is located.*
+
+[create_user](charis-ant.github.com/Ergasia_1_e18011_Antoniadi_Charis/create_user)
