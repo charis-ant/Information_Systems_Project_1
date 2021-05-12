@@ -2,7 +2,7 @@
 Repository for assignment 1 of Information Systems course, containing an app.py file and a README file with a detailed description of the project.
 
 
-##Preparation
+## Preparation
 Firstly we need to open a terminal window to start docker
 ```bash
 sudo dockerd
