@@ -32,7 +32,7 @@ python3 app.py
 ```
 *note: If the app.py file isn't located in the default path, we use the cd command in order to relocate to the directory where the file is located.*
 
-##app.py
+## app.py
 In order to execute all the endpoints, we have to create a user to add to the Users collection, who has the login info given by the user in the terminal window by typing the command:
 ```bash
 curl -X POST localhost:5000/createUser -d '{"username":"insert username here", "password":"insert password here"}' -H Content-Type:application/json
