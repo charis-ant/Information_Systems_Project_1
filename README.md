@@ -128,6 +128,7 @@ else:
 
 ### Login (POST)
 After the user was successfully created, they need to be logged in. What that means is that their info for the fields username and password have to completly match with the values stored in the database. To check if that requierement is satisfied, we use the command in line 73 of the app.py file, where a search through the users collection is executed. If that if statement is true, the next step is to call the create_session function to create a new session for that user. In line 77 of the app.py file a dictionary (res) is filled with the current session's uuid and with the user's username. Finally, a corresponding response will be printed as well as the content of the dictionary res to let the user know the session's uuid (that's import because it will be used for all of the following endpoints). In case the if statement turns out to be false, the message "Wrong username or password".
+*The authentication process occurs in everyone of the following functions/endpoints.*
 ```python
 if users.find_one({"$and":[ {"username":data['username']}, {"password":data['password']}]}):
     user_uuid = create_session(data['username'])
@@ -137,7 +138,7 @@ else:
     return Response("Wrong username or password.", status=400, mimetype='application/json')
 ```
 ### Get student (GET)
-Assuming the user's authentication was successful, 
+The function get_student is resposnible for searching through the database for a student with the email address given by the user in the curl command. Before the search for the student happens, the user must be authenticated by giving their session uuid, which occured after the loggin process (mentioned in the previous endpoint).  Assuming the user's authentication was successful (the is_session_valid function called in line 102 returns true) and a student with the specific email address was found in the collection, the command in line 116 will return a responce with the student's info. In case of unsuccessful authentication, a corresponding message will be printed.
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
@@ -152,6 +153,7 @@ else:
 ```
 
 ### Get students thirties (GET)
+This endpoint is used to get the information of every student in the collection born in the year 1991. After the successful authentication of the user (the is_session_valid function called in line 126 returns true), the command in line 134 of the app.py file checks if there are any student's born in the year 1991 by counting the number of them. If that number is zero, meaning there is no student found then a corresponding response will be printed. Else, if the number of them is not equal to zero, meaning there are indeed students born in that year then a dictionary (iterable) will be filled with the students info and an empty list (student_list) will be created. This list is going to be filled with every student's info through a for loop in order for the information of all of the students to appear on screen with the command in line 150 of the app.py file.
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
@@ -170,6 +172,7 @@ else:
 ```
 
 ### Get students oldies (GET)
+This endpoint is used to get the information of every student in the collection born in the year 1991 or earlier. After the successful authentication of the user (the is_session_valid function called in line 158 returns true), the command in line 165 of the app.py file checks if there are any student's born in the year 1991 or earlier by counting the number of them. If that number is zero, meaning there is no student found then a corresponding response will be printed. Else, if the number of them is not equal to zero, meaning there are indeed students born in that year or earlier then a dictionary (iterable) will be filled with the students info and an empty list (student_list) will be created. That list is going to be filled with every student's info through a for loop in order for the information of all of the students to appear on screen with the command in line 181 of the app.py file.
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
@@ -188,6 +191,7 @@ else:
 ```
 
 ### Get student address (GET)
+This endpoint is used to get the information a student with the email address specified in the curl command. After the successful authentication of the user (the is_session_valid function called in line 200 returns true), the command in line 208 of the app.py file checks if there is any student with a declared address in their info and with the same email address as the one given by the user. If that student exists then their name, street and postcode information will be passed to the student dictionary. To get only the street and postcode part of the address key, we have to take a look in how the data is stored in the students.json file. There we can confirm that the value of the "address" key is in fact an array of length equal to 1, meaning all the information stored in it, is place in address[0] place. Inside the array we can find a dictionary with the keys "street", "city" and "postcode". To get to these keys and their values, we simply have to specify the name of the keys. That is exactly what is being done through the command in line 212 of the app.py file. Then the student dictionary will be returned as a response. In case there is no student found then a corresponding response will be printed.
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
