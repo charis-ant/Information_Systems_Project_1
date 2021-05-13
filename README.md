@@ -114,6 +114,17 @@ But if the student has passed at least one of the declared courses then their na
 
 *Every time a change has been made to the app.py file, to execute the third, forth, fifth, sixth, seventh, eighth or nineth query we need to execute the login query first in order to get the new session uuid*
 
+## app.py
+### Create User (POST)
+### Login (POST)
+### Get student (GET)
+### Get students thirties (GET)
+### Get students oldies (GET)
+### Get student address (GET)
+### Delete student (DELETE)
+### Add courses (PATCH)
+### Get passed courses (GET)
+
 ##### References:
 https://stackoverflow.com/questions/28467967/unhashable-type-dict-keys-works-in-ver-2-7-5-but-not-in-3-4
 https://pythonexamples.org/python-list-of-dictionaries/
