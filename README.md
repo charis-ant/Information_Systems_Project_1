@@ -115,6 +115,7 @@ But if the student has passed at least one of the declared courses then their na
 *Every time a change has been made to the app.py file, to execute the third, forth, fifth, sixth, seventh, eighth or nineth query we need to execute the login query first in order to get the new session uuid*
 
 ## app.py
+If this is the first time we are going to run the app.py in order to execute all of the nine endopoints, we have to create a user to login and start the process with their creadentials. That's why we use the create_user function. Everytime a new user is created, there has to be a proof that there is no other person with the same username in the collection. The command in line 46 of the app.py file, ensures us that's the case, because after a search to the collection, the number of people with that exact username must equal to zero if we want the process of creating a user to continue. Then, if we pass that initial check a dictionary with the user's creadentials will be created and later on insert to the collection. Finally, a success response will be printed. On the other hand, if there's already a user with the same username the a corresponding message will be printed.
 ### Create User (POST)
 ```python
 if users.find({"username":data['username']}).count() == 0:
