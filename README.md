@@ -127,7 +127,7 @@ else:
 ```
 
 ### Login (POST)
-After the user was successfully created, they need to be logged in (they need to be authenticated).
+After the user was successfully created, they need to be logged in. What that means is that their info for the fields username and password have to completly match with the values stored in the database. To check if that requierement is satisfied, we use the command in line 73 of the app.py file, where a search through the users collection is executed. If that if statement is true, the next step is to call the create_session function to create a new session for that user. In line 77 of the app.py file a dictionary (res) is filled with the current session's uuid and with the user's username. Finally, a corresponding response will be printed as well as the content of the dictionary res to let the user know the session's uuid (that's import because it will be used for all of the following endpoints). In case the if statement turns out to be false, the message "Wrong username or password".
 ```python
 if users.find_one({"$and":[ {"username":data['username']}, {"password":data['password']}]}):
     user_uuid = create_session(data['username'])
@@ -137,6 +137,7 @@ else:
     return Response("Wrong username or password.", status=400, mimetype='application/json')
 ```
 ### Get student (GET)
+Assuming the user's authentication was successful, 
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
