@@ -127,6 +127,7 @@ else:
 ```
 
 ### Login (POST)
+After the user was successfully created, they need to be logged in (they need to be authenticated).
 ```python
 if users.find_one({"$and":[ {"username":data['username']}, {"password":data['password']}]}):
     user_uuid = create_session(data['username'])
