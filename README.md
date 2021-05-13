@@ -191,7 +191,7 @@ else:
 ```
 
 ### Get student address (GET)
-This endpoint is used to get the information a student with the email address specified in the curl command. After the successful authentication of the user (the is_session_valid function called in line 200 returns true), the command in line 208 of the app.py file checks if there is any student with a declared address in their info and with the same email address as the one given by the user. If that student exists then their name, street and postcode information will be passed to the student dictionary. To get only the street and postcode part of the address key, we have to take a look in how the data is stored in the students.json file. There we can confirm that the value of the "address" key is in fact an array of length equal to 1, meaning all the information stored in it, is place in address[0] place. Inside the array we can find a dictionary with the keys "street", "city" and "postcode". To get to these keys and their values, we simply have to specify the name of the keys. That is exactly what is being done through the command in line 212 of the app.py file. Then the student dictionary will be returned as a response. In case there is no student found then a corresponding response will be printed.
+This endpoint is used to get the information a student with the email address specified in the curl command. After the successful authentication of the user (the is_session_valid function called in line 200 returns true), the command in line 208 of the app.py file checks if there is any student with a declared address in their info and with the same email address as the one given by the user. If that student exists then their name, street and postcode information will be passed to the student dictionary. To get only the street and postcode part of the address key, we have to take a look in how the data is stored in the students.json file. There we can confirm that the value of the "address" key is in fact an array of length equal to 1, meaning all the information stored in it, is placed in address[0] place. Inside the array we can find a dictionary with the keys "street", "city" and "postcode". To get to these keys and their values, we simply have to specify the name of the keys. That is exactly what is being done through the command in line 212 of the app.py file. Then the student dictionary will be returned as a response. In case there is no student found then a corresponding response will be printed.
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
@@ -207,6 +207,7 @@ else:
 ```
 
 ### Delete student (DELETE)
+The function delete_student is resposnible for searching through the database for a student with the same email address as the one given by the user in the curl command and deleting them from the collection. After the successful authentication of the user (the is_session_valid function called in line 238 returns true), the command in line 246 of the app.py file searches through the collection to find the student with the specific email and passes their info to the student dictionary. If that student exists then the command in line 250 ensures their deletion from the collection. Their name followed by a fitting text (string) are assigned to the msg variable in order for it to be printed with the help of the command in line 254. In case there is no student found then a corresponding response will be printed.
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
@@ -223,6 +224,7 @@ else:
 ```
 
 ### Add courses (PATCH)
+The function add_courses is resposnible for searching through the database for a student with the same email address as the one given by the user in the curl command and adding courses alognside with their grades to the student's info. After the successful authentication of the user (the is_session_valid function called in line 277 returns true), the command in line 285 of the app.py file searches through the collection to find the student with the specific email and passes their info to the student dictionary. If that student exists then the commands in lines 289-294 ensures the update of their information by adding the courses field. Their name followed by a fitting text (string) are assigned to the msg variable in order for it to be printed with the help of the command in line 298. In case there is no student found then a corresponding response will be printed.
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
@@ -244,6 +246,8 @@ else:
 ```
 
 ### Get passed courses (GET)
+This endpoint is used to get the name and passed courses of a student with the email address specified in the curl command. After the successful authentication of the user (the is_session_valid function called in line 321 returns true), the command in line 208 of the app.py file checks if there is any student with declared courses in their info and with the same email address as the one given by the user. If that student exist, in order for their info to be printed an iteration must happen. To uderstand why that happens, we have to take a look in how the data is stored in the students.json file. There we can confirm that the value of the "courses" key is in fact an array of length equal to the number of the courses added from the previous endpoint. In every position of the array the is a dictionary key and its value corresponding to the name of the course and its grade. To get to these keys and their values, we have to iterate though the array with the help of the command in line 337 of teh app.py file. To get the name of each key we use the command in line 339 we take advantage of the dictionary method "keys" as well as the "list" word because in python3, the "keys" method returns an iterable set-like view object, not a list (but through the use of the list reserved word, that object is turned to a list).
+That is exactly what is being done through the command in line 212 of the app.py file. Then the student dictionary will be returned as a response. In case there is no student found then a corresponding response will be printed.
 ```python
 uuid = request.headers.get('authorization')
 authentication = is_session_valid(uuid)
