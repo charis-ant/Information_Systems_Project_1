@@ -1,4 +1,4 @@
-# Ergasia_1_e18011_Antoniadi_Charis
+# Information Systems Project 1
 This project is about executing queries for a Mongodb database using the pymongo module of python. The app.py file contains nine endpoints, each used for the POST, GET, PATCH and DELETE HTTP methods.
 
 ## Preparation
