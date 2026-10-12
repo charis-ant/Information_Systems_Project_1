@@ -268,13 +268,3 @@ else:
     else:
         return Response("No student with that email was found", status=500, mimetype='application/json')
 ```
-
-##### References:
-https://stackoverflow.com/questions/28467967/unhashable-type-dict-keys-works-in-ver-2-7-5-but-not-in-3-4
-https://pythonexamples.org/python-list-of-dictionaries/
-https://stackoverflow.com/questions/17117912/python-accessing-values-in-a-list-of-dictionaries/43496398
-https://stackoverflow.com/questions/51677489/dictionary-containing-a-list-of-dictionaries
-https://stackoverflow.com/questions/53017026/how-can-i-access-list-values-in-a-dictionary
-https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github
-https://www.makeareadme.com/
-https://guides.github.com/features/mastering-markdown/
