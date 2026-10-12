@@ -1,5 +1,5 @@
 # Information Systems Project 1
-This project is about executing queries for a Mongodb database using the pymongo module of python. The app.py file contains nine endpoints, each used for the POST, GET, PATCH and DELETE HTTP methods.
+This project is about executing queries within a Mongodb database using the Python's PyMongo module. The `app.py` file contains nine endpoints, each used for the POST, GET, PATCH and DELETE HTTP methods.
 
 ## Preparation
 Firstly we need to open a terminal window to start docker
