@@ -58,7 +58,8 @@ The API allows authenticated users to:
 .
 ├── app.py
 ├── students.json
-└── README.md
+├── README.md
+└── assets
 ```
 
 ## Setup
