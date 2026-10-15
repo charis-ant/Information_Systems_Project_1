@@ -136,7 +136,7 @@ The application will start locally and expose the available REST endpoints.
 
 ```bash
 curl -X POST localhost:5000/createUser \
--d '{"username":"user","password":"password"}' \
+-d '{"username":"user1", "password":"123456789"}' \
 -H Content-Type:application/json
 ```
 
@@ -144,16 +144,62 @@ curl -X POST localhost:5000/createUser \
 
 ```bash
 curl -X POST localhost:5000/login \
--d '{"username":"user","password":"password"}' \
+-d '{"username":"user1", "password":"1234567897"}' \
 -H Content-Type:application/json
 ```
 
-### Retrieve Student
+### Get Student
 
 ```bash
 curl -X GET localhost:5000/getStudent \
--d '{"email":"student@example.com"}' \
--H "authorization:<session_uuid>" \
+-d '{"email":"herreraware@ontagene.com"}' \
+-H "authorization: 592b6b0e-b316-11eb-b18c-00155da5c9a2" \
+-H Content-Type:application/json
+```
+
+### Get students (thirties)
+```bash
+curl -X GET localhost:5000/getStudents/thirties \
+-H "authorization: 592b6b0e-b316-11eb-b18c-00155da5c9a2" \
+-H Content-Type:application/json
+```
+
+### Get students (oldies)
+```bash
+curl -X GET localhost:5000/getStudents/oldies \
+-H "authorization: 592b6b0e-b316-11eb-b18c-00155da5c9a2" \
+-H Content-Type:application/json
+```
+
+### Get student address
+```bash
+curl -X GET localhost:5000/getStudentAddress \
+-d '{"email":"herreraware@ontagene.com"}' \
+-H "authorization: 592b6b0e-b316-11eb-b18c-00155da5c9a2" \
+-H Content-Type:application/json
+```
+
+### Delete student
+```bash
+curl -X DELETE localhost:5000/deleteStudent \
+-d '{"email":"herreraware@ontagene.com"}' \
+-H "authorization: 592b6b0e-b316-11eb-b18c-00155da5c9a2" \
+-H Content-Type:application/json
+```
+
+### Add courses
+```bash
+curl -X PATCH localhost:5000/addCourses \
+-d '{"email":"middletondelacruz@ontagene.com", "courses":[{"InfoSys":10}, {"XML":4}, {"Networks":5}]}' \
+-H "authorization: 592b6b0e-b316-11eb-b18c-00155da5c9a2" \
+-H Content-Type:application/json
+```
+
+### Get passed courses
+```bash
+curl -X GET localhost:5000/getPassedCourses \
+-d '{"email":"middletondelacruz@ontagene.com"}' \
+-H "authorization: 592b6b0e-b316-11eb-b18c-00155da5c9a2"
 -H Content-Type:application/json
 ```
 
